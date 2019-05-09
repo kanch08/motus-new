@@ -11,12 +11,16 @@ $primary-color:#c4c4c4;
   font-weight:$weight;
 }
 .container{
-  max-width: 1200px;
+  //max-width: 1200px;
+
   width: 100%;
   margin: 0 auto;
   margin-bottom:10%;
 }
 
+form{
+  width:100%;
+}
 
 .formwrapper{
   width:50%;

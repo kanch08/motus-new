@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Router, NavLink } from 'react-router-dom';
 import '../../mainstylesheet/mainstyle.css';
 import Logo from '../../images/logo.png';
 
@@ -14,7 +15,10 @@ const Header=props=> {
                     <div className="header-links">
                         <nav>
                             <a href="#">Home</a>
-                            <a href="#">Customers</a>
+                            <Router>
+                                <NavLink to="/Customer" target="_blank">Customer</NavLink>
+
+                            </Router>
                             <a href="#">Reports</a>
                             <a href="#">Help Centre</a>
                         </nav>
@@ -27,8 +31,10 @@ const Header=props=> {
                 </div>
             </div>
         </header>
+
     );
 
 }
+const Customer = () => <div>nsdknaf</div>;
 
 export default Header;

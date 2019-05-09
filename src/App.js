@@ -1,10 +1,12 @@
 import React, {Component} from 'react';
 import Header from './components/header/Header';
 import ProgressBar from './components/progressBar/ProgressBar';
-import CompanyDetails from './components/addCompanyInfo/AddCompanyInfo';
+import CompanyDetails from './components/addCompanyInfo/CompanyDetails';
 import AssignProducts from './components/assignProducts/AssignProducts';
 import SetupAdmins from './components/setupAdmins/SetupAdmins';
+// import FormErrors from './components/FormErrors';
 import Footer from './components/footer/Footer';
+
 import './mainstylesheet/mainstyle.css';
 
 
@@ -56,6 +58,9 @@ class App extends Component {
                 </section>
                 <ProgressBar className="progress-bar" progress={this.state.progress} completed={this.state.completed}/>
 
+                {/* <div>*/}
+                {/* <FormErrors formErrors={this.state.formErrors} />*/}
+                {/*</div>*/}
                 <section className="forms-container">
                     {step === 0 && <CompanyDetails nextStep={this.nextStep} backStep={this.backStep}/>}
                     {step === 1 && <AssignProducts nextStep={this.nextStep} backStep={this.backStep}/>}

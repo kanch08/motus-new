@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Input from './Input';
 import Select from './Select';
+import Date from './Date';
 import '../../mainstylesheet/mainstyle.css';
 
 class CompanyDetails extends Component {
@@ -36,6 +37,13 @@ class CompanyDetails extends Component {
                         />
 
 
+                    </div>
+
+                    <div>
+
+                    <Date
+                        name="startDate"
+                    />
                     </div>
 
 

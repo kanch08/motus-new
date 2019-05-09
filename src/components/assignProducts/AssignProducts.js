@@ -114,6 +114,8 @@ class AssignProducts extends Component {
                     }
                 </ul>
 
+
+
                 <h2 className="products-heading">Payment Method</h2>
                 <p className="required-forms">Applies to Fixed and variable Rate and Cents per Mile Products Only</p>
                 <ul className="payment">

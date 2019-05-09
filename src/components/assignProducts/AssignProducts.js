@@ -41,12 +41,13 @@ class AssignProducts extends Component {
                 <ul className="enabled-products">
                     {
                         checkboxesConfig.map(item => (
-                            <li>
+                            <li  key={item.key}>
 
                                 <Checkbox
                                     label={item.label}
                                     name={item.name}
                                     callback={this.handleCallback}
+
 
                                 />
 
@@ -58,11 +59,13 @@ class AssignProducts extends Component {
                                             {
                                             extraOptionsCheckboxConfig.map(item => (
 
-                                                    <li>
+                                                    <li  key={item.key}>
 
                                                         <Checkbox
                                                             name={"form1" + item.name}
-                                                            label={item.label}/>
+                                                            label={item.label}
+
+                                                        />
 
                                                     </li>
 
@@ -80,7 +83,7 @@ class AssignProducts extends Component {
                                         <span class="required-forms">Select the required forms:</span>
                                         {
                                             extraOptionsCheckboxConfig.map(item => (
-                                                <li>
+                                                <li  key={item.key}>
 
                                                     <Checkbox
                                                         name={"form2" + item.name}
@@ -95,7 +98,7 @@ class AssignProducts extends Component {
 
                                     {this.state.techOnly && item.name === "techOnly" ?
                                         extraOptionsCheckboxConfig.map(item => (
-                                            <li>
+                                            <li  key={item.key}>
 
                                                 <Checkbox
                                                     name={"form3" + item.name}
@@ -116,7 +119,7 @@ class AssignProducts extends Component {
                 <ul className="payment">
                     {
                         radioButtonConfig.map(item => (
-                            <li>
+                            <li  key={item.key}>
 
 
                                 <RadioButton
@@ -137,7 +140,7 @@ class AssignProducts extends Component {
                 <ul className="nest--controls">
                     {this.state.paymentMethod === "Direct Deposit" ?
                         DriverManagement.map(item => (
-                            <li>
+                            <li  key={item.key}>
                                 <RadioButton
                                     name={"form1" + item.name}
                                     label={item.label}
@@ -152,7 +155,7 @@ class AssignProducts extends Component {
                 <ul className="nest--controls">
                     {this.state.paymentMethod === "Concur" ?
                         FixedPaymentSchedule.map(item => (
-                            <li>
+                            <li  key={item.key}>
                                 <RadioButton
                                     name={"form2" + item.name}
                                     label={item.label}
@@ -167,7 +170,7 @@ class AssignProducts extends Component {
 
                     {this.state.paymentMethod === "Payroll File" ?
                         paymentFrequency.map(item => (
-                            <li>
+                            <li  key={item.key}>
                                 <RadioButton
                                     name={"form3" + item.name}
                                     label={item.label}/>

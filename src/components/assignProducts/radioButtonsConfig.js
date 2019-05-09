@@ -30,7 +30,7 @@ const radioButtonConfig = [
 const DriverManagement=[
     {
         name: 'DriverManagement',
-        key: 'radiobutton1',
+        key: 'radiobutton4',
         label: 'Self Service',
 
 
@@ -38,7 +38,7 @@ const DriverManagement=[
 
     {
         name: 'DriverManagement',
-        key: 'radiobutton2',
+        key: 'radiobutton5',
         label: 'HRIS Feed',
 
 
@@ -57,7 +57,7 @@ const DriverManagement=[
 const FixedPaymentSchedule=[
     {
         name: 'FPS',
-        key: 'radiobutton1',
+        key: 'radiobutton6',
         label: 'Prior Month',
 
 
@@ -65,7 +65,7 @@ const FixedPaymentSchedule=[
 
     {
         name: 'FPS',
-        key: 'radiobutton2',
+        key: 'radiobutton7',
         label: 'Current Month',
 
 
@@ -76,7 +76,7 @@ const FixedPaymentSchedule=[
 const paymentFrequency=[
     {
         name:"paymentFrequency",
-        key:"radiobutton",
+        key:"radiobutton8",
         label:"monthly  "
     }
 ]

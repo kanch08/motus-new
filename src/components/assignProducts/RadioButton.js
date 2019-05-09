@@ -30,7 +30,7 @@ class RadioButton extends Component {
                     <input
                         name={name}
                         type="radio"
-                        defaultChecked={productData[name]}
+
                         onChange={this.handleCheck}
                     />
                     <span className="radio-checkmark"></span>

@@ -25,18 +25,18 @@ const checkboxesConfig = [
 const extraOptionsCheckboxConfig = [
     {
         name: 'InsuranceDeclaration',
-        key: 'checkBox2',
+        key: 'checkBox4',
         label: 'Insurance Declaration'
 
     },
     {
         name: 'BVIF',
-        key: 'checkBox3',
+        key: 'checkBox5',
         label: 'Vehicle Information(BVIF)'
     },
     {
         name: 'MVR',
-        key: 'checkBox4',
+        key: 'checkBox6',
         label: 'Motor Vehicle Records(MVR)'
     },
 
@@ -46,19 +46,3 @@ export {
     extraOptionsCheckboxConfig
 }
 
-// {
-//     name:'fixedInsurance',
-//         key:'checkBox2',
-//     label:'Insurance Declaration'
-//
-// },
-// {
-//     name:'fixedVehicle',
-//         key:'checkBox3',
-//     label:'Vehicle Information(BVIF)'
-// },
-// {
-//     name:'fixedMotor',
-//         key:'checkBox4',
-//     label:'Motor Vehicle Records(MVR)'
-// },

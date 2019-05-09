@@ -32,7 +32,15 @@ class Select extends Component{
                         value="select"
                         onChange={this.handleChange}
 
-                    />
+                    >
+                        {this.props.children}
+
+
+
+
+
+                    </select>
+
             </div>
 
 

@@ -104,7 +104,7 @@ const StyledProgressBarWrapper = styled.div`
     color:blue;
     position:absolute;
     top:-10px;
-    left:${props => props.progress - 1}%; 
+    left:${props => props.progress - 3}%; 
   }
   
   .first{

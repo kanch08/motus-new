@@ -6,52 +6,54 @@
 .container {
   max-width: 1200px;
   width: 100%;
-  margin: 0 auto; }
-
-.wrapper {
-  width: 90%;
   margin: 0 auto;
-  display: flex;
-  justify-content: space-between; }
+  margin-bottom: 10%; }
 
 .formwrapper {
   width: 50%;
-  margin: 0 auto;
-  padding-top: 40px; }
+  margin: 0 auto; }
 
 .progress-bar {
   width: 50%;
   margin: 0 auto; }
 
 header {
-  background: #F8F9FA;
+  width: 100%;
   padding: 20px;
   box-shadow: 0px 0px 7px 5px #c4c4c4; }
-  header .logo-image {
-    height: 33px;
-    width: 118px; }
-  header a {
-    line-height: 3;
-    text-decoration: none;
-    color: gray;
-    margin-left: 20px; }
-  header :first-child {
-    margin-left: 0; }
-  header .search-icon {
-    background: #cccaca;
-    border-radius: 20px;
-    padding: 8px 12px;
-    color: #fff; }
-  header .fa-user-circle {
-    font-size: 40px;
-    color: #cccaca; }
+  header .container {
+    width: 95%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between; }
+    header .container .logo .logo-image {
+      width: 118px;
+      float: left;
+      position: relative;
+      top: 5px; }
+    header .container .logo .header-links {
+      width: 500px;
+      position: relative;
+      left: 40px;
+      top: 10px; }
+    header .container a {
+      text-decoration: none;
+      color: gray;
+      margin-left: 20px; }
+    header .container :first-child {
+      margin-left: 0; }
+    header .container .search-icon span i {
+      padding: 5px; }
+    header .container .fa-user-circle {
+      font-size: 40px;
+      color: #cccaca; }
 
 .main-heading {
   background: rgba(224, 225, 225, 0.41);
   text-align: center;
   padding: 30px 0; }
   .main-heading h1 {
-    font-size: 16px;
+    font-size: 24px;
     font-weight: 500; }
 
 .back-btn {
@@ -63,6 +65,14 @@ header {
   width: 60%;
   margin: 50px auto;
   padding-top: 60px; }
+  .form1 .form-check {
+    padding: 10px;
+    background: #E0E1E1;
+    margin-bottom: 7%; }
+    .form1 .form-check .form-check-input {
+      margin-left: 180px; }
+    .form1 .form-check .form-check-label {
+      margin-left: 200px; }
   .form1 h2 {
     font-size: 24px;
     font-weight: 500;
@@ -90,5 +100,10 @@ header {
   margin-top: 20px;
   background: #0077b6;
   color: #ffffff; }
+
+.footer {
+  padding: 20px 100px;
+  margin-top: 10%;
+  background-color: darkgrey; }
 
 /*# sourceMappingURL=mainstyle.css.map */

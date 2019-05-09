@@ -14,52 +14,65 @@ $primary-color:#c4c4c4;
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
+  margin-bottom:10%;
 }
 
-.wrapper{
-  width:90%;
-  margin:0 auto;
-  display:flex;
-  justify-content: space-between;
-}
 
 .formwrapper{
   width:50%;
   margin: 0 auto;
-  padding-top: 40px;
+  //padding-top: 40px
 }
+
 .progress-bar{
   width:50%;
   margin:0 auto;
 }
+
 header{
-  background: #F8F9FA;
-  .logo-image{
-    height: 33px;
-    width: 118px;
-  }
-
-  a{
-    line-height: 3;
-    text-decoration: none;
-    color: gray;
-    margin-left: 20px;
-  }:first-child{
-  margin-left: 0;
-     }
-
-  .search-icon{
-    background: rgb(204, 202, 202);
-    border-radius: 20px;
-    padding: 8px 12px;
-    color: #fff;
-  }
-  .fa-user-circle{
-    font-size: 40px;
-    color: rgb(204, 202, 202);
-  }
+  width: 100%;
   padding: 20px;
   box-shadow: 0px 0px 7px 5px $primary-color;
+  .container{
+    width: 95%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+
+    .logo{
+      .logo-image{
+        width: 118px;
+        float: left;
+        position: relative;
+        top: 5px;
+      }
+      .header-links{
+        width: 500px;
+        position: relative;
+        left: 40px;
+        top: 10px;
+      }
+    }
+    a{
+      text-decoration: none;
+      color: gray;
+      margin-left: 20px;
+    }:first-child{
+       margin-left: 0;
+     }
+
+    .search-icon{
+      span{
+        i{
+          padding: 5px;
+        }
+      }
+    }
+    .fa-user-circle{
+      font-size: 40px;
+      color: rgb(204, 202, 202);
+    }
+  }
 }
 
 .main-heading{
@@ -68,7 +81,7 @@ header{
   padding:30px 0;
 
   h1{
-    @include heading(16px,500);
+    @include heading(24px,500);
   }
 }
 
@@ -86,6 +99,17 @@ header{
   width:60%;
   margin:50px auto;
   padding-top:60px;
+  .form-check{
+    padding:10px;
+    background:#E0E1E1;
+    margin-bottom:7%;
+    .form-check-input{
+      margin-left:180px;
+    }
+    .form-check-label{
+      margin-left:200px;
+    }
+  }
   h2{
     @include heading(24px,500);
     margin-top:80px;
@@ -108,6 +132,7 @@ header{
   }
 
 }
+
 
 
 
@@ -150,4 +175,11 @@ header{
   margin-top: 20px;
   background: #0077b6;
   color:#ffffff;
+}
+
+.footer
+{
+  padding: 20px 100px;
+  margin-top:10%;
+  background-color: darkgrey;
 }

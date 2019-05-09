@@ -1,87 +1,198 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { product } from '../action/Action';
-import {checkboxesConfig} from './checkboxesConfig';
+import React, {Component, Fragment} from 'react';
+import {checkboxesConfig, extraOptionsCheckboxConfig} from './checkboxesConfig';
 import Checkbox from './Checkbox';
+import RadioButton from './RadioButton';
 import './stylesheetProducts/styleProduct.css';
+import {DriverManagement, FixedPaymentSchedule, paymentFrequency, radioButtonConfig} from "./radioButtonsConfig";
 
 class AssignProducts extends Component {
     constructor(props) {
         super(props);
         console.log('props', props);
-        this.state = {
-            checkedItems:[]
-        };
+        this.state = {};
     }
 
-    handleCheck = (e) =>{
-        const item = e.target.name;
-        const isChecked = e.target.checked;
-        console.log("printing event in handle check",e);
-
+    handleCallback = ({item, isChecked}) => {
+        console.log("handle callback called in radiobutton")
         this.setState({
-            [item]:isChecked
-
+            [item]: isChecked,
         })
-        //this.setState(prevState => ({ checkedItems: prevState.checkedItems.set(item, isChecked) }));
+
+    }
+
+    handleCallbackRadio = (item, value) => {
+        console.log("handle radio called")
+        this.setState({
+            [item]: value
+        })
     }
 
     handleSubmit = (event) => {
-        const{productData,product}=this.props;
         event.preventDefault();
-        console.log("Data after Input--> ",this.state);
         this.props.nextStep();
-        product({...this.state});
     }
 
     render() {
-        const {productData}=this.props;
-        console.log(productData["fixedRate"])
-        console.log("printing productData inside render method",productData);
-        return(
-        <form onSubmit={this.handleSubmit}>
-            <h2 className="products-heading">Enabled Products</h2>
-            <ul className="enabled-products">
-            {
-              checkboxesConfig.map(item=>(
-                <li>
-                    <label key={item.key}>
-                        {item.label}
+        const {productData} = this.props;
 
-                        <Checkbox
-                            name={item.name}
-                            onChange={this.handleCheck}
-                            defaultChecked={productData[item.name]}
-                            ComponentToRender={item.component}
-                            currentStatus={this.state[item.name]}/>
+        return (
+            <form className="form2" onSubmit={this.handleSubmit}>
+                <h2 className="products-heading">Enabled Products</h2>
+                <ul className="enabled-products">
+                    {
+                        checkboxesConfig.map(item => (
+                            <li>
+
+                                <Checkbox
+                                    label={item.label}
+                                    name={item.name}
+                                    callback={this.handleCallback}
+
+                                />
+
+                                <ul class="nest--controls">
+
+                                    {this.state.fixedRate && item.name === "fixedRate" ?
+                                        <>
+                                            <span class="required-forms">Select the required forms:</span>
+                                            {
+                                            extraOptionsCheckboxConfig.map(item => (
+
+                                                    <li>
+
+                                                        <Checkbox
+                                                            name={"form1" + item.name}
+                                                            label={item.label}/>
+
+                                                    </li>
 
 
-                    </label>
+                                                )
+                                            )
+                                        }
+                                        </> : null
+                                    }
+                                </ul>
+                                <ul class="nest--controls">
 
-                </li>
-              ))
-            }
-            </ul>
-            <div className="container">
-                <button type="button" className="btn btn-secondary back-btn" variant="primary"
-                        onClick={this.props.backStep}>Back
-                </button>
-                <button type="submit" onClick={(e)=>this.handleSubmit(e)} className="next-btn" variant="primary">Next --></button>
-            </div>
+                                    {this.state.centMile && item.name === "centMile" ?
+                                        <>
+                                        <span class="required-forms">Select the required forms:</span>
+                                        {
+                                            extraOptionsCheckboxConfig.map(item => (
+                                                <li>
 
-        </form>
+                                                    <Checkbox
+                                                        name={"form2" + item.name}
+                                                        label={item.label}/>
+                                                </li>
+                                            ))
+                                        }
+                                        </>: null
+                                    }
+                                </ul>
+                                <ul className="nest--controls">
+
+                                    {this.state.techOnly && item.name === "techOnly" ?
+                                        extraOptionsCheckboxConfig.map(item => (
+                                            <li>
+
+                                                <Checkbox
+                                                    name={"form3" + item.name}
+                                                    label={item.label}/>
+                                            </li>
+                                        )) : null
+                                    }
+                                </ul>
+
+
+                            </li>
+                        ))
+                    }
+                </ul>
+
+                <h2 className="products-heading">Payment Method</h2>
+                <p className="required-forms">Applies to Fixed and variable Rate and Cents per Mile Products Only</p>
+                <ul className="payment">
+                    {
+                        radioButtonConfig.map(item => (
+                            <li>
+
+
+                                <RadioButton
+                                    label={item.label}
+                                    name={item.name}
+                                    callback={this.handleCallbackRadio}
+
+                                />
+
+
+                            </li>
+                        ))
+                    }
+
+
+                </ul>
+
+                <ul className="nest--controls">
+                    {this.state.paymentMethod === "Direct Deposit" ?
+                        DriverManagement.map(item => (
+                            <li>
+                                <RadioButton
+                                    name={"form1" + item.name}
+                                    label={item.label}
+
+                                />
+
+                            </li>
+
+                        )) : null
+                    }
+                </ul>
+                <ul className="nest--controls">
+                    {this.state.paymentMethod === "Concur" ?
+                        FixedPaymentSchedule.map(item => (
+                            <li>
+                                <RadioButton
+                                    name={"form2" + item.name}
+                                    label={item.label}
+                                />
+                            </li>
+                                )) : null
+
+
+                    }
+                </ul>
+                <ul className="nest--controls">
+
+                    {this.state.paymentMethod === "Payroll File" ?
+                        paymentFrequency.map(item => (
+                            <li>
+                                <RadioButton
+                                    name={"form3" + item.name}
+                                    label={item.label}/>
+                            </li>
+
+                        )) : null
+                    }
+
+
+                </ul>
+
+                <div className="container">
+                    <button type="button" className="btn btn-secondary back-btn" variant="primary"
+                            onClick={this.props.backStep}>Back
+                    </button>
+                    <button type="submit" onClick={(e) => this.handleSubmit(e)} className="next-btn"
+                            variant="primary">Next -->
+                    </button>
+                </div>
+
+            </form>
 
 
         )
     }
 }
 
-const mapStateToProps = state => ({
-    productData: state.Product,
-})
-
-const mapDispatchToProps = dispatch => ({
-    product: (data) => dispatch(product(data))
-})
-
-export default connect(mapStateToProps,mapDispatchToProps)(AssignProducts);
+export default AssignProducts;

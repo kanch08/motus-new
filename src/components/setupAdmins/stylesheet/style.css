@@ -1,22 +1,28 @@
 .setupAdmins {
-  margin-top: 50px; }
+  margin-top: 9%; }
   .setupAdmins .table {
     width: 80%;
     margin: 0 auto;
-    border: 1px solid lightgray; }
+    border: 1px solid lightgray;
+    box-shadow: 1px 1px 11px 2px #d3d3d3; }
     .setupAdmins .table .list input[type="text"] {
       padding: 10px;
       border: 1px solid lightgray; }
     .setupAdmins .table .list input[type="date"] {
       padding: 9px;
       border: 1px solid lightgray; }
-  .setupAdmins .addBtn {
-    border-radius: 50%;
-    background: transparent;
-    color: #d3d3d3;
-    border: 1px solid  #d3d3d3;
-    outline: 0; }
-    .setupAdmins .addBtn:hover {
-      cursor: pointer; }
+
+.addBtn {
+  border-radius: 50%;
+  padding: 3px 8px;
+  background: transparent;
+  color: #d3d3d3;
+  border: 1px solid #d3d3d3;
+  outline: 0; }
+  .addBtn:hover {
+    cursor: pointer; }
+
+:disabled {
+  cursor: not-allowed; }
 
 /*# sourceMappingURL=style.css.map */

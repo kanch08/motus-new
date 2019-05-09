@@ -4,6 +4,7 @@ import ProgressBar from './components/progressBar/ProgressBar';
 import CompanyDetails from './components/addCompanyInfo/AddCompanyInfo';
 import AssignProducts from './components/assignProducts/AssignProducts';
 import SetupAdmins from './components/setupAdmins/SetupAdmins';
+import Footer from './components/footer/Footer';
 import './mainstylesheet/mainstyle.css';
 
 
@@ -62,6 +63,7 @@ class App extends Component {
                 </section>
 
                 <footer>
+                    <Footer/>
 
                 </footer>
             </div>

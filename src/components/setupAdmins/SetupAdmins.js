@@ -10,7 +10,7 @@ class SetupAdmins extends Component {
         super(props);
         this.state = {
             ...this.props.adminReducer,
-            forms: [{name: "form1"}]
+            forms: [{name: "form1",deleteDisabled:"true"}]
         };
     }
 
@@ -27,34 +27,32 @@ class SetupAdmins extends Component {
 
     handleSubmit = event => {
         event.preventDefault();
-        const { allData } = this.props;
-        alert(JSON.stringify(allData));
+
         // const {admin} = this.props;
         // event.preventDefault();
         // console.log("Data after Input--> ", this.state);
-        admin({...this.state});
+
     };
+    onSubmit= event=>{
+        const {allData} = this.props;
+        alert(JSON.stringify(allData));
+    }
 
     handleAddMore = event => {
-        console.log("inside handle addmore");
-        let newFrom = {name: "forms" + this.state.forms.length + 1}
+        let newFrom = {name: "forms" + this.state.forms.length + 1,deleteDisabled:false}
         let joinedForms = [...this.state.forms, newFrom]
         this.setState({
             forms: joinedForms
         })
     }
-     handleDelete=event =>{
-        console.log("delete");
-        let newForm={name:"forms"+this.state.forms.length -1}
-         let deletedForms = [...this.state.forms, newForm]
-         this.setState({
-             forms: deletedForms
-         })
-     }
-
-
-
-
+    // handleDelete = event => {
+    //     console.log("delete");
+    //     let newForm = {name: "forms" + this.state.forms.length - 1}
+    //     let deletedForms = [...this.state.forms, newForm]
+    //     this.setState({
+    //         forms: deletedForms
+    //     })
+    // }
 
     render() {
         return (
@@ -72,31 +70,33 @@ class SetupAdmins extends Component {
                     </thead>
                     <tbody>
 
-                        {
-                            this.state.forms.map(item => (
+                    {
+                        this.state.forms.map(item => (
+                                <AdminForm
+                                    handleChange={this.handleChange}
+                                    handleCheck={this.handleCheck}
+                                    formName={item.name}
+                                    deleteDisabled={item.deleteDisabled}
+                                    key={item.name}
+                                    firstInput={this.state[item.name + "firstInput"]}
+                                    secondInput={this.state[item.name + "secondInput"]}
+                                    thirdInput={this.state[item.name + "thirdInput"]}
+                                    dateInput={this.state[item.name + "dateInput"]}
 
-                                    <AdminForm
-                                        handleChange={this.handleChange}
-                                        handleCheck={this.handleCheck}
-                                        formName={item.name}
-                                        key={item.name}
-                                        firstInput={this.state[item.name + "firstInput"]}
-                                        secondInput={this.state[item.name + "secondInput"]}
-                                        thirdInput={this.state[item.name + "thirdInput"]}
-                                        dateInput={this.state[item.name + "dateInput"]}
 
-                                    />
-                                )
+                                />
                             )
-                        }
+                        )
+                    }
 
                     </tbody>
                     <tfoot>
                     <tr>
-                        <td colspan="5">
-                        <button className="addBtn"  disabled={this.state.forms.length >= 3 ? true :false} onClick={this.handleAddMore}>
-                            <i className="fas fa-plus"/>
-                        </button>
+                        <td colspan="6">
+                            <button className="addBtn" disabled={this.state.forms.length >= 3 ? true : false}
+                                    onClick={this.handleAddMore}>
+                                <i className="fas fa-plus"/>
+                            </button>
                         </td>
 
                     </tr>
@@ -114,11 +114,12 @@ class SetupAdmins extends Component {
                     </button>
                     <button
                         type="submit"
-                        className="btn btn-primary next-btn"
+                        className="next-btn"
                         variant="primary"
+                        onClick={this.onSubmit}
 
                     >
-                        Next -->
+                        Save and View Customer -->
                     </button>
                 </div>
             </form>
@@ -127,7 +128,8 @@ class SetupAdmins extends Component {
 }
 
 const mapStateToProps = state => ({
-    adminReducer: state.adminReducer
+    adminReducer: state.adminReducer,
+    allData:state
 });
 
 const mapDispatchToProps = dispatch => ({

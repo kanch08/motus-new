@@ -11,13 +11,14 @@ const initialState ={
     state: "Rajasthan",
     zipcode: "",
     phone: "",
+    isValid:false
 }
 
 const Company = (state = initialState, action) =>{
     switch(action.type) {
         case 'ADD_COMPANY_INFO': {
-            console.log("Data received by company Reducer-->",action.data);
-            return {...state, ...action.data };
+            console.log("Data received by company Reducer-->",action);
+            return {...state, ...action.data};
         }
 
         default: {

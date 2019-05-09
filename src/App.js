@@ -5,7 +5,7 @@ import CompanyDetails from './components/addCompanyInfo/CompanyDetails';
 import AssignProducts from './components/assignProducts/AssignProducts';
 import SetupAdmins from './components/setupAdmins/SetupAdmins';
 // import FormErrors from './components/FormErrors';
-import Footer from './components/footer/Footer';
+import Footer from './components/footer/Footer'
 
 import './mainstylesheet/mainstyle.css';
 

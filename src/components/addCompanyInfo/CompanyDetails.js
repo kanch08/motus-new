@@ -3,6 +3,8 @@ import Input from './Input';
 import Select from './Select';
 import Date from './Date';
 import '../../mainstylesheet/mainstyle.css';
+import {connect} from 'react-redux';
+
 
 class CompanyDetails extends Component {
     constructor(props) {
@@ -21,7 +23,7 @@ class CompanyDetails extends Component {
 
 
     render() {
-        const {company} = this.props;
+        const {company,isValid} = this.props;
         let {date, zipcode, phone} = this.state;
 
         return (
@@ -70,6 +72,7 @@ class CompanyDetails extends Component {
                             type="submit"
                             className="next-btn"
                             variant="primary"
+                            style={isValid? {pointerEvents:"All"}:{pointerEvents:'none'}}
                         >
                             Next -->
                         </button>
@@ -80,4 +83,12 @@ class CompanyDetails extends Component {
     );
     }
     }
-    export default CompanyDetails;
+    const mapStateToProps=(state) =>{
+        const isValid = !state.errors.length
+        return {
+            isValid:isValid
+        }
+        
+        
+    }
+    export default connect(mapStateToProps)(CompanyDetails);

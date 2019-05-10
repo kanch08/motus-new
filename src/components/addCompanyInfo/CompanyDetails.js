@@ -10,9 +10,10 @@ class CompanyDetails extends Component {
     constructor(props) {
         console.log("constructor called with props", props)
         super(props);
-        this.state = {}
+        this.state = {
+            ...props.company
+        }
     }
-
 
     handleSubmit = (event) => {
         event.preventDefault();
@@ -23,60 +24,109 @@ class CompanyDetails extends Component {
 
 
     render() {
-        const {company,isValid} = this.props;
-        let {date, zipcode, phone} = this.state;
+        const {addCompanyInfo} = this.props;
 
         return (
             <form className="form1" onSubmit={this.handleSubmit}>
 
                 <div className="formwrapper">
                     <div className="company-info">
-
-
+                        Company Name
                         <Input
                             name="cname"
-
                         />
-
+                        Company Alias
+                        <Input
+                            name="calias"
+                        />
 
                     </div>
 
-                    <div>
+                    <h2>Account Information</h2>
+                    Industry
+                    <Select
+                        name="industry"
+                    >
+                        <option value="Agro">Agro</option>
+                        <option value="Marketing">Marketing</option>
+                        <option value="Finance">Finance</option>
+                    </Select>
 
+                    Account Manager
+                    <Select
+                        name="accountManager"
+                    >
+                        <option>Manager1</option>
+                        <option>Manager2</option>
+                        <option>Manager3</option>
+                    </Select>
                     <Date
                         name="startDate"
                     />
-                    </div>
 
-
-                    <h2>Account Information</h2>
+                    <h2>Contact Information</h2>
+                    Country
                     <Select
-                        name="Industry"
+                        name="country"
                     >
-                        <option>Agro</option>
-                        <option>Marketing</option>
-                        <option>Finance</option>
+                        <option>USA</option>
+                        <option>India</option>
+                        <option>Australia</option>
                     </Select>
 
+                    Billing Address Line1
+                    <Input
+                        name="address1"
+                    />
 
-                    <div className="container">
-                        <button
-                            type="button"
-                            className="btn btn-secondary back-btn"
-                            variant="primary"
-                            onClick={this.props.backStep}
-                        >
-                            Cancel
-                        </button>
-                        <button
-                            type="submit"
-                            className="next-btn"
-                            variant="primary"
-                            style={isValid? {pointerEvents:"All"}:{pointerEvents:'none'}}
-                        >
-                            Next -->
-                        </button>
-                    </div>
+                    Billing Address Line2
+                    <Input
+                        name="address2"
+                    />
+
+                    City
+                    <Input
+                        name="city"
+                    />
+                    State
+                    <Select
+                        name="state"
+                    >
+                        <option>Rajasthan</option>
+                        <option>Kerala</option>
+                        <option>New Delhi</option>
+                    </Select>
+
+                    Zipcode
+                    <Input
+                        name="zipcode"
+                    />
+
+                    Phone
+                    <Input
+                        name="phone"
+                    />
+
+
+
+
+                </div>
+                <div className="container">
+                    <button
+                        type="button"
+                        className="btn btn-secondary back-btn"
+                        variant="primary"
+                        onClick={this.props.backStep}
+                    >
+                        Cancel
+                    </button>
+                    <button
+                        type="submit"
+                        className="next-btn"
+                        variant="primary"
+                    >
+                        Next -->
+                    </button>
                 </div>
             </form>
 

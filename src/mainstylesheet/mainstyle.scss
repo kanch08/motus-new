@@ -137,6 +137,50 @@ header{
 
 }
 
+//table styling
+
+.tableData{
+  width: 90%;
+  position: relative;
+  top: 10px;
+  margin: auto;
+
+
+  h3{
+    margin:20px 0;
+    text-align: center;
+  }
+  table{
+    width:700px;
+    margin: auto;
+
+      th{
+        text-align: left;
+        padding: 15px 20px;
+        background:#f2f2f2;
+        margin: 20px auto;
+        color: #999;
+        font-weight: 600;
+      }
+
+    tr{
+      height: 50px;
+      margin: 10px 0;
+      td{
+        width: 230px;
+        margin: 5px;
+        border: thin solid #ccc;
+        padding: 15px;
+        text-transform: capitalize;
+        font-size: 14px;
+        color : #666;
+        &:first-of-type{
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}
 
 
 
@@ -180,6 +224,7 @@ header{
   background: #0077b6;
   color:#ffffff;
 }
+
 
 .footer
 {

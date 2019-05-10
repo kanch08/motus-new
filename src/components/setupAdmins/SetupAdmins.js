@@ -8,9 +8,10 @@ import "./stylesheet/style.css";
 class SetupAdmins extends Component {
     constructor(props) {
         super(props);
+        console.log("printing props in constructor",props.adminReducer)
         this.state = {
             ...this.props.adminReducer,
-            forms: [{name: "form1",deleteDisabled:"true"}]
+            forms: props.adminReducer.forms || [{name: "form1",deleteDisabled:"true"}]
         };
     }
 
@@ -27,15 +28,12 @@ class SetupAdmins extends Component {
 
     handleSubmit = event => {
         event.preventDefault();
-
-        // const {admin} = this.props;
-        // event.preventDefault();
-        // console.log("Data after Input--> ", this.state);
-
     };
+
     onSubmit= event=>{
-        const {allData} = this.props;
-        alert(JSON.stringify(allData));
+        const {admin, history, allData}=this.props;
+        admin(this.state);
+        history.push('/customer')
     }
 
     handleAddMore = event => {
@@ -45,14 +43,7 @@ class SetupAdmins extends Component {
             forms: joinedForms
         })
     }
-    // handleDelete = event => {
-    //     console.log("delete");
-    //     let newForm = {name: "forms" + this.state.forms.length - 1}
-    //     let deletedForms = [...this.state.forms, newForm]
-    //     this.setState({
-    //         forms: deletedForms
-    //     })
-    // }
+
 
     render() {
         return (

@@ -26,7 +26,12 @@ class Input extends Component {
         <label className="container">
           {label}
           ￼
-          <input name={name} type="text" onChange={this.handleChange} />
+          <input
+              name={name}
+              type="text"
+              value={company[name]}
+              onChange={this.handleChange}
+          />
 
         </label>
         <div>

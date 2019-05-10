@@ -87,7 +87,8 @@ class AssignProducts extends Component {
 
                                                     <Checkbox
                                                         name={"form2" + item.name}
-                                                        label={item.label}/>
+                                                        label={item.label}
+                                                    />
                                                 </li>
                                             ))
                                         }

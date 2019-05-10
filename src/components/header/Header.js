@@ -14,11 +14,11 @@ const Header=props=> {
                     </div>
                     <div className="header-links">
                         <nav>
-                            <a href="#">Home</a>
-                            <Router>
-                                <NavLink to="/Customer" target="_blank">Customer</NavLink>
+                            <NavLink to="/">Home</NavLink>
 
-                            </Router>
+                                <NavLink to="/Customer">Customer</NavLink>
+
+
                             <a href="#">Reports</a>
                             <a href="#">Help Centre</a>
                         </nav>

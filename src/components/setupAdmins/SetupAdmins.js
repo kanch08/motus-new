@@ -8,9 +8,10 @@ import "./stylesheet/style.css";
 class SetupAdmins extends Component {
     constructor(props) {
         super(props);
+        console.log("printing props in constructor", props.adminReducer)
         this.state = {
             ...this.props.adminReducer,
-            forms: [{name: "form1",deleteDisabled:"true"}]
+            forms: props.adminReducer.forms || [{name: "form1", deleteDisabled: "true"}]
         };
     }
 
@@ -19,40 +20,40 @@ class SetupAdmins extends Component {
         this.setState({
             [event.target.name]: event.target.value
         });
-    };
+    }
+
     handleCheck = e => {
         let name = e.target.name;
         this.setState({[name]: !this.state[name]});
-    };
+    }
 
     handleSubmit = event => {
         event.preventDefault();
+    }
 
-        // const {admin} = this.props;
-        // event.preventDefault();
-        // console.log("Data after Input--> ", this.state);
+    onSubmit = event => {
+        const {admin, history} = this.props;
+        admin(this.state);
+        history.push('/customer')
+    }
 
-    };
-    onSubmit= event=>{
-        const {allData} = this.props;
-        alert(JSON.stringify(allData));
+    handleDelete = (inputName) => {
+        let {forms} = this.state;
+        console.log("printing inputname", inputName)
+        let filteredArray = forms.filter(item => item.name !== inputName);
+        this.setState({
+            forms: filteredArray
+        })
     }
 
     handleAddMore = event => {
-        let newFrom = {name: "forms" + this.state.forms.length + 1,deleteDisabled:false}
+        let newFrom = {name: "forms" + this.state.forms.length + 1, deleteDisabled: false}
         let joinedForms = [...this.state.forms, newFrom]
         this.setState({
             forms: joinedForms
         })
     }
-    // handleDelete = event => {
-    //     console.log("delete");
-    //     let newForm = {name: "forms" + this.state.forms.length - 1}
-    //     let deletedForms = [...this.state.forms, newForm]
-    //     this.setState({
-    //         forms: deletedForms
-    //     })
-    // }
+
 
     render() {
         return (
@@ -75,6 +76,7 @@ class SetupAdmins extends Component {
                                 <AdminForm
                                     handleChange={this.handleChange}
                                     handleCheck={this.handleCheck}
+                                    handleDelete={this.handleDelete}
                                     formName={item.name}
                                     deleteDisabled={item.deleteDisabled}
                                     key={item.name}
@@ -129,7 +131,7 @@ class SetupAdmins extends Component {
 
 const mapStateToProps = state => ({
     adminReducer: state.adminReducer,
-    allData:state
+    allData: state
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -5,7 +5,6 @@
 
 .form2 {
   margin: 0 auto;
-  width: 50%;
 
   .products-heading {
     @include heading(20px, 500);
@@ -15,7 +14,7 @@
 
   .enabled-products {
     list-style: none;
-    margin-left: 70px;
+    margin-left: 50px;
 
     li {
       font-size:16px;
@@ -25,7 +24,7 @@
 }
 
 .nest--controls{
-  margin-left:30px;
+  margin-left:30%;
   list-style: none;
 }
 
@@ -33,6 +32,12 @@
   font-style: italic;
   font-size:16px;
   color:#999999;
+}
+.annualTax,.payment{
+  p{
+    color:#999;
+    font-style: italic;
+  }
 }
 
 
@@ -220,3 +225,4 @@
   border-radius: 50%;
   background: white;
 }
+

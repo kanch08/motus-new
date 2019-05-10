@@ -1,25 +1,28 @@
 .form2 {
-  margin: 0 auto;
-  width: 50%; }
+  margin: 0 auto; }
   .form2 .products-heading {
     font-size: 20px;
     font-weight: 500;
     margin-top: 19%; }
   .form2 .enabled-products {
     list-style: none;
-    margin-left: 70px; }
+    margin-left: 50px; }
     .form2 .enabled-products li {
       font-size: 16px;
       margin-left: 50px; }
 
 .nest--controls {
-  margin-left: 30px;
+  margin-left: 30%;
   list-style: none; }
 
 .required-forms {
   font-style: italic;
   font-size: 16px;
   color: #999999; }
+
+.annualTax p, .payment p {
+  color: #999;
+  font-style: italic; }
 
 .checkbox-div {
   display: block;

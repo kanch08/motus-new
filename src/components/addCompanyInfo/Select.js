@@ -11,13 +11,13 @@ class Select extends Component{
     }
 
     handleChange = (e) =>{
-        const{company}=this.props;
+        const{ addCompanyInfo }=this.props;
         let callback=this.props.callback || function(){};
         const item = e.target.name;
         const value = e.target.value;
         console.log("printing event in handle check",e);
         callback({item,value});
-        company({[item]:value})
+        addCompanyInfo({[item]:value})
 
     }
 
@@ -26,20 +26,20 @@ class Select extends Component{
 
         return(
             <div className="select-div">
-               {label}
-                    <select
-                        name={name}
-                        value="select"
-                        onChange={this.handleChange}
+                {label}
+                <select
+                    name={name}
+                    value={company[name]}
+                    onChange={this.handleChange}
 
-                    >
-                        {this.props.children}
-
-
+                >
+                    {this.props.children}
 
 
 
-                    </select>
+
+
+                </select>
 
             </div>
 

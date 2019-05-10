@@ -4,7 +4,7 @@ const Footer =props=> {
 
         return (
             <div className="footer">
-                <p>&copy Copyright 2019 Motus, LLC. All right reserved.</p>
+                <p>&copy; Copyright 2019 Motus, LLC. All right reserved.</p>
             </div>
         );
     }

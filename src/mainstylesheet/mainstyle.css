@@ -3,17 +3,38 @@
   margin: 0;
   padding: 0; }
 
+select {
+  width: 100%;
+  padding: 10px;
+  background: none;
+  border: thin solid #ccc;
+  font-size: 14px;
+  margin: 20px auto; }
+
+button {
+  padding: 15px; }
+
+ul li {
+  list-style: none; }
+
+input[type="text"] {
+  width: 100%;
+  margin: 20px auto;
+  padding: 5px; }
+
+input[type="date"] {
+  text-transform: uppercase;
+  padding: 5px;
+  border: thin solid #ccc;
+  margin: 10px auto; }
+
 .container {
   width: 100%;
-  margin: 0 auto;
-  margin-bottom: 10%; }
+  margin: 0;
+  padding: 0; }
 
 form {
   width: 100%; }
-
-.formwrapper {
-  width: 50%;
-  margin: 0 auto; }
 
 .progress-bar {
   width: 50%;
@@ -60,21 +81,32 @@ header {
 
 .back-btn {
   float: left;
+  margin-left: 100px;
   margin-bottom: 20px;
   margin-top: 20px; }
 
 .form1 {
-  width: 60%;
+  width: 100%;
   margin: 50px auto;
   padding-top: 60px; }
-  .form1 .form-check {
+  .form1 .demo-container {
+    width: 50%;
+    margin: 0 auto;
     padding: 10px;
     background: #E0E1E1;
     margin-bottom: 7%; }
-    .form1 .form-check .form-check-input {
-      margin-left: 180px; }
-    .form1 .form-check .form-check-label {
-      margin-left: 200px; }
+    .form1 .demo-container input {
+      margin-left: 110px;
+      margin-right: 10px; }
+  .form1 .formwrapper {
+    width: 30%;
+    margin: 0 auto; }
+    .form1 .formwrapper .company-info, .form1 .formwrapper .account-info {
+      margin-left: 0px;
+      font-weight: 500;
+      font-size: 18px; }
+      .form1 .formwrapper .company-info .container, .form1 .formwrapper .account-info .container {
+        padding: 0; }
   .form1 h2 {
     font-size: 24px;
     font-weight: 500;
@@ -92,6 +124,44 @@ header {
     font-size: 16px;
     font-weight: 500; }
 
+.state-wrapper {
+  display: flex; }
+  .state-wrapper .select-div, .state-wrapper .input-div {
+    margin-left: -40px;
+    margin-top: 10px; }
+
+.tableData {
+  width: 90%;
+  position: relative;
+  top: 10px;
+  margin: auto; }
+  .tableData h3 {
+    margin: 20px 0;
+    text-align: center; }
+  .tableData table {
+    width: 700px;
+    margin: auto; }
+    .tableData table th {
+      text-align: left;
+      padding: 15px 20px;
+      background: #f2f2f2;
+      margin: 20px auto;
+      color: #999;
+      font-weight: 600; }
+    .tableData table tr {
+      height: 50px;
+      margin: 10px 0; }
+      .tableData table tr td {
+        width: 230px;
+        margin: 5px;
+        border: thin solid #ccc;
+        padding: 15px;
+        text-transform: capitalize;
+        font-size: 14px;
+        color: #666; }
+        .tableData table tr td:first-of-type {
+          font-weight: 500; }
+
 .next-btn {
   float: right;
   padding: 8px;
@@ -106,6 +176,7 @@ header {
 .footer {
   padding: 20px 100px;
   margin-top: 10%;
-  background-color: darkgrey; }
+  background-color: #707070;
+  color: rgba(247, 247, 247, 0.58); }
 
 /*# sourceMappingURL=mainstyle.css.map */

@@ -1,3 +1,18 @@
+const monthConfig=[
+    {
+        name: 'Month',
+        key: 'radiobutton9',
+        label: 'November',
+        value:'november',
+    },
+    {
+        name: 'paymentMethod',
+        key: 'radiobutton10',
+        label: 'December',
+        value:'december',
+    }
+
+]
 const radioButtonConfig = [
     {
         name: 'paymentMethod',
@@ -84,6 +99,7 @@ const paymentFrequency=[
 
 
 export {
+    monthConfig,
     radioButtonConfig,
     paymentFrequency,
     FixedPaymentSchedule,

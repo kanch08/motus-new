@@ -1,9 +1,10 @@
-export const addCompanyInfo = (data) =>{
+export const addCompanyInfo = (data,validator) =>{
     console.log("---ADD COMPANY INFO---");
-    console.log('Data received by company Action--->', data);
+    console.log('Data received by company Action--->', data,validator);
     return{
         type: 'ADD_COMPANY_INFO',
-        data
+        data,
+        validator
     }
 }
 

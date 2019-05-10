@@ -7,4 +7,4 @@ const isRequired = (value)=>{
     }
 }
 
-export default isRequired
+export default isRequired;

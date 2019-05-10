@@ -6,7 +6,7 @@ class AdminForm extends Component {
     render() {
         let { firstInput, secondInput, thirdInput, dateInput } = this.props;
 
-        const {handleChange,handleCheck,formName,length,deleteDisabled}=this.props;
+        const {handleChange,handleCheck,formName, handleDelete , deleteDisabled}=this.props;
         return (
 
 
@@ -21,7 +21,7 @@ class AdminForm extends Component {
 
                         <td>
 
-                            {deleteDisabled?null:  <button> <i className="fas fa-trash-alt delete"></i></button> }
+                            {deleteDisabled?null:  <button onClick={()=>handleDelete(formName)}> <i className="fas fa-trash-alt delete"></i></button> }
                         </td>
                     </tr>
 

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Input from './Input';
 import Select from './Select';
+import Checkbox from '../assignProducts/Checkbox';
 import Date from './Date';
 import '../../mainstylesheet/mainstyle.css';
 import {connect} from 'react-redux';
@@ -28,7 +29,9 @@ class CompanyDetails extends Component {
 
         return (
             <form className="form1" onSubmit={this.handleSubmit}>
-
+                <div className="demo-container">
+                   <input type="checkbox" name="demo"/>This is a demo company
+                </div>
                 <div className="formwrapper">
                     <div className="company-info">
                         Company Name
@@ -60,6 +63,7 @@ class CompanyDetails extends Component {
                         <option>Manager2</option>
                         <option>Manager3</option>
                     </Select>
+                    Start Date
                     <Date
                         name="startDate"
                     />
@@ -88,7 +92,9 @@ class CompanyDetails extends Component {
                     <Input
                         name="city"
                     />
-                    State
+
+                    <div className="state-wrapper">
+                        <p>State</p>
                     <Select
                         name="state"
                     >
@@ -97,12 +103,13 @@ class CompanyDetails extends Component {
                         <option>New Delhi</option>
                     </Select>
 
-                    Zipcode
+                        <p>Zipcode</p>
                     <Input
                         name="zipcode"
                     />
+                    </div>
 
-                    Phone
+                    <p>Phone</p>
                     <Input
                         name="phone"
                     />
@@ -125,7 +132,7 @@ class CompanyDetails extends Component {
                         className="next-btn"
                         variant="primary"
                     >
-                        Next -->
+                        Next <i className="fas fa-arrow-right"></i>
                     </button>
                 </div>
             </form>

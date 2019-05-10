@@ -18,7 +18,7 @@ class AnnualTax extends Component {
                     <option value="Quaterly">Quaterly</option>
                     <option value="Monthly">Monthly</option>
                 </select>
-                <h5>What month does tax reporting start?</h5>
+                <p>What month does tax reporting start?</p>
                 <div className="payment">
                     <ul>
                         {
@@ -28,7 +28,7 @@ class AnnualTax extends Component {
                                         name={item.name}
                                         label={item.label}
                                     />
-                                    {item.label}
+                                    {/*{item.label}*/}
 
                                 </li>
 

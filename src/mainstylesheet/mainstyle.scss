@@ -1,180 +1,237 @@
-*{
+* {
   box-sizing: border-box;
-  margin:0;
-  padding:0;
+  margin: 0;
+  padding: 0;
 }
 
-$primary-color:#c4c4c4;
+$primary-color: #c4c4c4;
 
-@mixin heading($size,$weight){
-  font-size:$size;
-  font-weight:$weight;
+@mixin heading($size,$weight) {
+  font-size: $size;
+  font-weight: $weight;
 }
-.container{
-  //max-width: 1200px;
-
-  width: 100%;
-  margin: 0 auto;
-  margin-bottom:10%;
-}
-
-form{
+select{
   width:100%;
+  padding: 10px;
+  background:none;
+  border: thin solid #ccc;
+  font-size: 14px;
+  margin: 20px auto;
+}
+button{
+  padding:15px;
+}
+ul li{
+  list-style: none;
 }
 
-.formwrapper{
-  width:50%;
+input[type="text"]{
+  width:100%;
+  margin: 20px auto;
+  padding: 5px;
+}
+input[type="date"]{
+  text-transform: uppercase;
+  padding: 5px;
+  border: thin solid #ccc;
+  margin:10px auto;
+}
+
+.container {
+  //max-width: 1200px;
+  width: 100%;
+  margin:0;
+  padding: 0;
+}
+
+form {
+  width: 100%;
+}
+
+
+
+.progress-bar {
+  width: 50%;
   margin: 0 auto;
-  //padding-top: 40px
 }
 
-.progress-bar{
-  width:50%;
-  margin:0 auto;
-}
-
-header{
+header {
   width: 100%;
   padding: 20px;
   box-shadow: 0px 0px 7px 5px $primary-color;
-  .container{
+
+  .container {
     width: 95%;
     margin: auto;
     display: flex;
     justify-content: space-between;
 
-    .logo{
-      .logo-image{
+    .logo {
+      .logo-image {
         width: 118px;
         float: left;
         position: relative;
         top: 5px;
       }
-      .header-links{
+
+      .header-links {
         width: 500px;
         position: relative;
         left: 40px;
         top: 10px;
       }
     }
-    a{
+
+    a {
       text-decoration: none;
       color: gray;
       margin-left: 20px;
-    }:first-child{
-       margin-left: 0;
-     }
+    }
 
-    .search-icon{
-      span{
-        i{
+    :first-child {
+      margin-left: 0;
+    }
+
+    .search-icon {
+      span {
+        i {
           padding: 5px;
         }
       }
     }
-    .fa-user-circle{
+
+    .fa-user-circle {
       font-size: 40px;
       color: rgb(204, 202, 202);
     }
   }
 }
 
-.main-heading{
+.main-heading {
   background: rgba(224, 225, 225, 0.41);
   text-align: center;
-  padding:30px 0;
+  padding: 30px 0;
 
-  h1{
-    @include heading(24px,500);
+  h1 {
+    @include heading(24px, 500);
   }
 }
 
 
-
-
-.back-btn{
+.back-btn {
   float: left;
+  margin-left:100px;
   margin-bottom: 20px;
   margin-top: 20px;
 }
 
 
-.form1{
-  width:60%;
-  margin:50px auto;
-  padding-top:60px;
-  .form-check{
-    padding:10px;
-    background:#E0E1E1;
-    margin-bottom:7%;
-    .form-check-input{
-      margin-left:180px;
-    }
-    .form-check-label{
-      margin-left:200px;
-    }
-  }
-  h2{
-    @include heading(24px,500);
-    margin-top:80px;
-    padding-bottom: 10px;
-    position:relative;
-    &::after{
-      content:"";
-      position:absolute;
-      bottom:0;
-      left:0;
-      width:100%;
-      border-bottom:1px solid $primary-color;
+.form1 {
+  width: 100%;
+  margin: 50px auto;
+  padding-top: 60px;
+
+
+  .demo-container {
+    width: 50%;
+    margin: 0 auto;
+    padding: 10px;
+    background: #E0E1E1;
+    margin-bottom: 7%;
+    input {
+      margin-left: 110px;
+      margin-right: 10px;
     }
   }
 
-  .form-group{
-    label{
-      @include heading(16px,500);
+  .formwrapper{
+    width:30%;
+    margin:0 auto;
+    .company-info,.account-info{
+      margin-left:0px;
+      font-weight:500;
+      font-size:18px;
+
+      .container{
+        padding: 0;
+      }
+
+    }
+  }
+  h2 {
+    @include heading(24px, 500);
+    margin-top: 80px;
+    padding-bottom: 10px;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      border-bottom: 1px solid $primary-color;
+    }
+  }
+
+  .form-group {
+    label {
+      @include heading(16px, 500);
     }
   }
 
 }
 
+.state-wrapper{
+  display: flex;
+  .select-div,.input-div{
+    margin-left: -40px;
+    margin-top: 10px;
+  }
+}
+
+
 //table styling
 
-.tableData{
+.tableData {
   width: 90%;
   position: relative;
   top: 10px;
   margin: auto;
 
 
-  h3{
-    margin:20px 0;
+  h3 {
+    margin: 20px 0;
     text-align: center;
   }
-  table{
-    width:700px;
+
+  table {
+    width: 700px;
     margin: auto;
 
-      th{
-        text-align: left;
-        padding: 15px 20px;
-        background:#f2f2f2;
-        margin: 20px auto;
-        color: #999;
-        font-weight: 600;
-      }
+    th {
+      text-align: left;
+      padding: 15px 20px;
+      background: #f2f2f2;
+      margin: 20px auto;
+      color: #999;
+      font-weight: 600;
+    }
 
-    tr{
+    tr {
       height: 50px;
       margin: 10px 0;
-      td{
+
+      td {
         width: 230px;
         margin: 5px;
         border: thin solid #ccc;
         padding: 15px;
         text-transform: capitalize;
         font-size: 14px;
-        color : #666;
-        &:first-of-type{
+        color: #666;
+
+        &:first-of-type {
           font-weight: 500;
         }
       }
@@ -183,37 +240,7 @@ header{
 }
 
 
-
-
-
-//%form{
-//  label{
-//    width: 50%;
-//  }
-//  .form-check{
-//    margin-top:50px;
-//    background:#E0E1E1;
-//  }
-//  .form-check-inline{
-//    margin-bottom: 30px;
-//    .form-check-input{
-//      height: 20px;
-//      width: 20px;
-//    }
-//    label{
-//      width: 100%;
-//      color: #000;
-//      font-weight:600;
-//    }
-//  }
-//}
-//
-//.companyDetails{
-//  @extend %form;
-//}
-
-
-.next-btn{
+.next-btn {
   float: right;
   padding: 8px;
   border-radius: 5px;
@@ -222,13 +249,13 @@ header{
   margin-bottom: 20px;
   margin-top: 20px;
   background: #0077b6;
-  color:#ffffff;
+  color: #ffffff;
 }
 
 
-.footer
-{
+.footer {
   padding: 20px 100px;
-  margin-top:10%;
-  background-color: darkgrey;
+  margin-top: 10%;
+  background-color: #707070;
+  color: rgba(247, 247, 247, 0.58);
 }
